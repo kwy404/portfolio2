@@ -20,6 +20,17 @@ As tarefas serão criadas pelo mentor no Trello e serão executadas uma de cada 
 8. **QA Approved:** tarefa que já foi testada pelo QA e foi devidamente aprovada quanto ao seu funcionamento
 9. **Done/deployed:** tarefa que já foi concluída, isto é, mergeada e feito o deploy
 
+Git flow:
+
+Antes de começar qualquer tarefa, seguir o seguinte passo a passo:
+
+1. Alternar para a branch `develop`
+2. Atualizar a branch (`git fetch && git pull`)
+3. Criar uma nova branch baseada na `develop` seguindo a nomenclatura definida
+4. Commitar seguindo a nomenclatura definida
+5. Após o trabalho ser concluído, criar uma PR onde a `base` é a `develop` e o `compare` é a sua branch
+6. Marcar no próprio GitHub o mentor como revisor
+
 Qualquer dúvida deve ser perguntada ao mentor para maiores esclarecimentos.
 
 ## Guidelines
