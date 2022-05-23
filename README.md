@@ -59,4 +59,8 @@ Utilizar o do `airbnb` como base:
 
 https://github.com/airbnb/javascript
 
-Se possível, configurar no projeto o `eslint` usando o padrão do `airbnb`
+Se possível, configurar no projeto o `eslint` usando o padrão do `airbnb`. Se for usar React:
+
+https://www.andrewmin.info/blog/react-setup/
+
+Dica: pular a parte do Prettier, não acho necessário
