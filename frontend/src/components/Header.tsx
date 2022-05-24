@@ -69,7 +69,7 @@ const Header = ({setDarkTheme, darkTheme}: theme) => {
                 padding: `0.75rem 1rem`
                 }}>
                     <a className="resume-button" target="_blank" rel="noopener noreferrer">
-                        { darkTheme ? <FaMoon/> : <FaSun/> }
+                        { darkTheme ? <FaSun/> : <FaMoon/> }
                         Change Theme</a>
                 </div>
             </header>
