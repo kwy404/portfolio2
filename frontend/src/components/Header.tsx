@@ -2,6 +2,7 @@ import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile';
 import { useEffect, useState} from 'react';
 import { FaMoon, FaSun } from "react-icons/fa";
+import LinksMenu from './LinksMenu';
 
 interface theme {
     setDarkTheme: void;
@@ -13,24 +14,7 @@ const Header = ({setDarkTheme, darkTheme}: theme) => {
     const [isDesktop, setIsDestkop] = useState(window.innerWidth > 760);
     const [pathActive, setPathActive] = useState(window.location.hash.replace(`#`, ``));
 
-    const linksMenu = [
-        {
-            name: 'About',
-            path: 'about'
-        },
-        {
-            name: 'Experience',
-            path: 'jobs'
-        },
-        {
-            name: 'Work',
-            path: 'projects'
-        },
-        {
-            name: 'Contact',
-            path: 'contact'
-        }
-    ];
+    const linksMenu = LinksMenu;
 
     useEffect(() => {
         const updateWindowDimensions = () => {
