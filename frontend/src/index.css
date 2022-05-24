@@ -127,7 +127,6 @@ nav{
     animation-duration: 0.9s;
     animation-iteration-count: 1;
     animation-timing-function: counter(item, steps(1)) + 1;
-    animation: all 0.2s ease;
 }
 
 .menuLinkContent ol li:hover{
