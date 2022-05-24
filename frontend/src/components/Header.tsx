@@ -11,6 +11,8 @@ interface theme {
 const Header = ({setDarkTheme, darkTheme}: theme) => {
     //Array with objects content linksMenu
     const [isDesktop, setIsDestkop] = useState(window.innerWidth > 760);
+    const [pathActive, setPathActive] = useState(window.location.hash.replace(`#`, ``));
+
     const linksMenu = [
         {
             name: 'About',
@@ -39,10 +41,15 @@ const Header = ({setDarkTheme, darkTheme}: theme) => {
 
     return (
         <>
-            {!isDesktop && <HeaderMobile linksMenu={linksMenu} MenuLink={MenuLink}/>}
+            {!isDesktop && <HeaderMobile 
+            linksMenu={linksMenu} MenuLink={MenuLink}/>}
             <header>
                 { isDesktop ? 
-                <HeaderDesktop linksMenu={linksMenu} MenuLink={MenuLink}/> : 
+                <HeaderDesktop 
+                pathActive={pathActive}
+                setPathActive={setPathActive}
+                linksMenu={linksMenu} 
+                MenuLink={MenuLink}/> : 
                 ``
                 }
                 <div 
@@ -73,11 +80,15 @@ const Header = ({setDarkTheme, darkTheme}: theme) => {
 interface propsMenuLink {
     name: string;
     path?: string;
+    pathActive?: string;
+    setPathActive: (path: string) => void;
 };
 
-const MenuLink = ({name, path}: propsMenuLink) => {
+const MenuLink = ({name, path, pathActive, setPathActive}: propsMenuLink) => {
     return (
-        <li className="fadedown-enter-done" style={{transitionDelay: '0ms'}}>
+        <li 
+        onClick={() => setPathActive(path)}
+        className={`fadedown-enter-done ${path == pathActive ? `onHash` : ``}`} style={{transitionDelay: '0ms'}}>
              <a href={`/#${path}`}>{name}</a>
         </li>
     )

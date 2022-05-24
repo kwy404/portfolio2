@@ -145,6 +145,10 @@ nav{
     filter: hue-rotate(180deg) drop-shadow(0px 0px 20px var(--navy-shadow));
 }
 
+.menuLinkContent ol .onHash{
+    filter: hue-rotate(180deg) drop-shadow(0px 0px 20px var(--navy-shadow));
+}
+
 .resume-button:hover{
     filter: hue-rotate(180deg) drop-shadow(0px 0px 20px var(--navy-shadow));
     color: var(--white);

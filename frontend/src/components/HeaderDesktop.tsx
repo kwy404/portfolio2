@@ -6,15 +6,19 @@ interface propsMenuLink {
 interface props {
     linksMenu: Array<propsMenuLink>;
     MenuLink: any;
+    pathActive?: string;
+    setPathActive: (path: string) => void;
 };
 
-const HeaderDesktop = ({MenuLink, linksMenu }: props) => {
+const HeaderDesktop = ({MenuLink, linksMenu, pathActive, setPathActive }: props) => {
     return <nav>
     <div className="logo fade-enter-done" tabIndex={-1}/>
     <div className="menuLinkContent">
         <ol>
             { linksMenu.map((link, index) => (
                 <MenuLink 
+                pathActive={pathActive}
+                setPathActive={setPathActive}
                 key={index}
                 {...link}
                 />
