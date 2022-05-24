@@ -1,18 +1,16 @@
 import { useState } from 'react'
 import { Route, BrowserRouter } from "react-router-dom";
-import './index.css'
+import './index.css';
+import Header from './components/Header';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <BrowserRouter>
-           {/* <Route component = { Home }  path="/" exact /> */}
-      </BrowserRouter>
+    <div className='theme-dark fullBody'>
+        <Header/>
+        <BrowserRouter>
+            {/* <Route component = { Home }  path="/" exact /> */}
+        </BrowserRouter>
     </div>
   )
 }
