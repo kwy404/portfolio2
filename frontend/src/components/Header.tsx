@@ -25,7 +25,7 @@ const Header = ({setDarkTheme, darkTheme}: theme) => {
             path: 'projects'
         },
         {
-            name: 'contact',
+            name: 'Contact',
             path: 'contact'
         }
     ];

@@ -40,6 +40,18 @@
     --ham-after-active: bottom 0.1s ease-out,transform 0.22s cubic-bezier(0.215,0.61,0.355,1) 0.12s;
 }
 
+li:hover{
+    transform: scale(1.09);
+}
+
+.animation{
+    transition: 0.2s ease;
+}
+
+.animation:hover{
+    transform: scale(1.09);
+}
+
 .theme-white{
     --bgColor: #b199aa;
     --bgColorDark: #9b9ba0;
