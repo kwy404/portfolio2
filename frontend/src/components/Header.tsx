@@ -1,5 +1,10 @@
+import HeaderDesktop from './HeaderDesktop';
+import HeaderMobile from './HeaderMobile';
+import { useEffect, useState} from 'react';
+
 const Header = () => {
     //Array with objects content linksMenu
+    const [isDesktop, setIsDestkop] = useState(window.innerWidth > 760);
     const linksMenu = [
         {
             name: 'About',
@@ -19,28 +24,25 @@ const Header = () => {
         }
     ];
 
+    
+
+    useEffect(() => {
+        const updateWindowDimensions = () => {
+            setIsDestkop(window.innerWidth > 550);
+        };
+        window.addEventListener("resize", updateWindowDimensions);
+    }, [window.innerWidth]);
+
     return (
         <>
             <header>
-                <nav>
-                    <div className="logo fade-enter-done" tabIndex={-1}/>
-                    <div className="menuLinkContent">
-                        <ol>
-                            { linksMenu.map(link => (
-                                <MenuLink 
-                                {...link}
-                                />
-                            ))}
-                        </ol>
-                        <div className="fadedown-enter-done" 
-                        style={{transitionDelay: '400ms'}}>
-                            <a className="resume-button" target="_blank" rel="noopener noreferrer">Resume</a>
-                        </div>
-                    </div>
-                </nav>
+                { isDesktop ? 
+                <HeaderDesktop linksMenu={linksMenu} MenuLink={MenuLink}/> : 
+                <HeaderMobile linksMenu={linksMenu} MenuLink={MenuLink}/>
+                }
             </header>
         </>
-    )
+    );
 };
 
 interface propsMenuLink {

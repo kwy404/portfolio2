@@ -43,11 +43,13 @@
 
 .theme-white {
     --bgColor: #f0f0f1;
+    --bgColorDark: #9b9ba0;
     --textColor: #3e3f44;
 }
 
 .theme-dark{
     --bgColor: #0f091f;
+    --bgColorDark: #07040e;
     --textColor: #ccd6f6;
 }
 
@@ -142,4 +144,83 @@ nav{
     transition: var(--transition);
     margin-left: 15px;
     font-size: var(--fz-xs);
+}
+
+.menuLinkContent button{
+    position: relative;
+    background-color: rgba(0,0,0,.40);
+    top: 10px;
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+}
+
+.contentMobile{
+    position: fixed;
+    width: fit-content;
+    right: 0px;
+    display: block;
+    background-color: var(--bgColorDark);
+    padding: 12px;
+    float: right;
+    top: 0px;
+    padding-top: 20px;
+    border-radius: 5px;
+    padding-bottom: 50px;
+    z-index: 2;
+    transition: 0.4s ease;
+}
+
+.openedMenu{
+    animation: openedMenuBlink 0.4s ease infinite;
+}
+
+@keyframes openedMenuBlink {
+    0% {
+        opacity: 0.95;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+
+.contentMobileAfter::after{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,.10);
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    animation: openMenu 0.4s ease;
+}
+
+.contentMobile ol{
+    display: block;
+    
+}
+
+.contentMobile ol li{
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+
+.contentMobile .resume-button{
+    position: relative;
+    top: 20px;
+}
+
+@keyframes openMenu {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
