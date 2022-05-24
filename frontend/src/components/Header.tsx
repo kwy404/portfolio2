@@ -28,8 +28,7 @@ const Header = () => {
                         <ol>
                             { linksMenu.map(link => (
                                 <MenuLink 
-                                linkTitle={link.name}
-                                linkPath={link.path}
+                                {..link}
                                 />
                             ))}
                         </ol>
@@ -45,14 +44,14 @@ const Header = () => {
 };
 
 interface propsMenuLink {
-    linkTitle: string;
-    linkPath?: string;
+    name: string;
+    path?: string;
 };
 
-const MenuLink = ({linkTitle, linkPath}: propsMenuLink) => {
+const MenuLink = ({name, path}: propsMenuLink) => {
     return (
         <li className="fadedown-enter-done" style={{transitionDelay: '0ms'}}>
-             <a href={`/#${linkPath}`}>{linkTitle}</a>
+             <a href={`/#${path}`}>{name}</a>
         </li>
     )
 };
