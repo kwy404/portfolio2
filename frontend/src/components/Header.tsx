@@ -42,7 +42,10 @@ const Header = ({setDarkTheme, darkTheme}: theme) => {
     return (
         <>
             {!isDesktop && <HeaderMobile 
-            linksMenu={linksMenu} MenuLink={MenuLink}/>}
+            pathActive={pathActive}
+            setPathActive={setPathActive}
+            linksMenu={linksMenu}
+            MenuLink={MenuLink}/>}
             <header>
                 { isDesktop ? 
                 <HeaderDesktop 

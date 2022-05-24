@@ -4,15 +4,19 @@ import {BsPlusLg} from 'react-icons/bs';
 interface propsMenuLink {
     name: string;
     path?: string;
+    pathActive?: string;
+    setPathActive: (path: string) => void;
 };
 
 interface props {
     linksMenu: Array<propsMenuLink>;
     MenuLink: any;
+    pathActive?: string;
+    setPathActive: (path: string) => void;
 };
 
 
-const HeaderMobile = ({MenuLink, linksMenu }: props) => {
+const HeaderMobile = ({MenuLink, linksMenu, pathActive, setPathActive }: props) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return <>
@@ -24,6 +28,8 @@ const HeaderMobile = ({MenuLink, linksMenu }: props) => {
         { isOpen && <div className='listIcons'>
             { linksMenu.map((link, index) => (
                 <MenuLink 
+                pathActive={pathActive}
+                setPathActive={setPathActive}
                 key={index}
                 {...link}
                 />

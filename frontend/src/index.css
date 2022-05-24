@@ -348,6 +348,19 @@ nav{
     cursor: pointer;
 }
 
+.listIcons .onHash{
+    filter: hue-rotate(119deg) drop-shadow(2px 4px 6px black) contrast(1.5);
+    text-decoration: underline;
+    text-decoration-color: var(--green);
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-anchor: middle;
+    text-decoration-thickness: 1px;
+    padding: 10px;
+    text-shadow: #020c1b;
+    text-size-adjust: 120%;
+}
+
 @keyframes enter {
     0% {
         transform: translateY(100%);
