@@ -28,7 +28,7 @@ const Header = () => {
                         <ol>
                             { linksMenu.map(link => (
                                 <MenuLink 
-                                {..link}
+                                {...link}
                                 />
                             ))}
                         </ol>
