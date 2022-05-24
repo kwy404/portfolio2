@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {BsPlusLg} from 'react-icons/bs';
-import {FaMinusCircle} from 'react-icons/fa';
+import {FaMinus} from 'react-icons/fa';
 
 interface propsMenuLink {
     name: string;
@@ -24,7 +24,7 @@ const HeaderMobile = ({MenuLink, linksMenu, pathActive, setPathActive }: props) 
         <div 
         onClick={() => setIsOpen(!isOpen)}
         className='buttonToggleBottom'>
-            { !isOpen ? <BsPlusLg/> : <FaMinusCircle/>}
+            { !isOpen ? <BsPlusLg/> : <FaMinus/>}
         </div>
         { isOpen && <div className='listIcons'>
             { linksMenu.map((link, index) => (
