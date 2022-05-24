@@ -1,6 +1,7 @@
 import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile';
 import { useEffect, useState} from 'react';
+import { FaMoon, FaSun } from "react-icons/fa";
 
 interface theme {
     setDarkTheme: void;
@@ -56,7 +57,9 @@ const Header = ({setDarkTheme, darkTheme}: theme) => {
                 borderRadius: `var(--border-radius)`,
                 padding: `0.75rem 1rem`
                 }}>
-                    <a className="resume-button" target="_blank" rel="noopener noreferrer">Change Theme</a>
+                    <a className="resume-button" target="_blank" rel="noopener noreferrer">
+                        { darkTheme ? <FaMoon/> : <FaSun/> }
+                        Change Theme</a>
                 </div>
             </header>
         </>
