@@ -40,20 +40,20 @@ const Header = () => {
                 </nav>
             </header>
         </>
-    )
-}
+    );
+};
 
 interface propsMenuLink {
     name: string;
     path?: string;
-}
+};
 
 const MenuLink = ({name, path}: propsMenuLink) => {
     return (
         <li className="fadedown-enter-done" style={{transitionDelay: '0ms'}}>
              <a href={`/#${path}`}>{name}</a>
         </li>
-    )
-}
+    );
+};
 
 export default Header;
