@@ -122,6 +122,18 @@ nav{
     position: relative;
     counter-increment: item 1;
     font-size: var(--fz-xs);
+    /* animation enter counter-increment item */
+    animation: enter;
+    animation-duration: 0.9s;
+    animation-iteration-count: 1;
+    animation-timing-function: counter(item, steps(1)) + 1;
+}
+
+.animation{
+    animation: enter;
+    animation-duration: 0.9s;
+    animation-iteration-count: 1;
+    animation-timing-function: counter(item, steps(1)) + 1;
 }
 
 .menuLinkContent ol li a {
@@ -166,6 +178,7 @@ nav{
     margin-right: 10px;
     width: 30px;
     filter: drop-shadow(0px 0px 2px rgba(0,0,0,.40));
+    fill: var(--textColor);
 }
 
 .contentMobile{
@@ -235,5 +248,76 @@ nav{
     }
     100% {
         transform: translateX(0);
+    }
+}
+
+@keyframes topTop {
+    0% {
+        transform: translateY(-100%) scale(0.6);
+    }
+    100% {
+        transform: translateY(0) scale(1.5);
+    }
+}
+
+@keyframes topTopTwo {
+    0% {
+        transform: translateY(20%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.buttonToggleBottom{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--bgColorDark);
+    height: 40px;
+    width: 40px;
+    transform: scale(1.5);
+    border-radius: 50%;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 2px rgba(0,0,0,.50)) hue-rotate(100deg);
+    animation: topTop 0.9s ease;
+}
+
+.buttonToggleBottom svg{
+    position: relative;
+    display: flex;
+    top: 11px;
+    left: 12px;
+    fill: var(--textColor);
+}
+
+.listIcons{
+    position: fixed;
+    width: fit-content;
+    padding-right: 40px;
+    height: 200px;
+    background-color: var(--bgColorDark);
+    right: 30px;
+    bottom: 100px;
+    filter: drop-shadow(0px 0px 2px rgba(0,0,0,.50)) hue-rotate(90deg) blur(100);
+    border: 0.1em solid var(--textColor);
+    border-radius: 10px;
+    opacity: 0.8;
+    animation: topTopTwo 0.9s ease;
+}
+
+.listIcons li{
+    width: 100%;
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@keyframes enter {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
     }
 }

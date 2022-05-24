@@ -32,21 +32,25 @@ const Header = ({setDarkTheme, darkTheme}: theme) => {
 
     useEffect(() => {
         const updateWindowDimensions = () => {
-            setIsDestkop(window.innerWidth > 725);
+            setIsDestkop(window.innerWidth > 855);
         };
         window.addEventListener("resize", updateWindowDimensions);
     }, [window.innerWidth]);
 
     return (
         <>
+            {!isDesktop && <HeaderMobile linksMenu={linksMenu} MenuLink={MenuLink}/>}
             <header>
                 { isDesktop ? 
                 <HeaderDesktop linksMenu={linksMenu} MenuLink={MenuLink}/> : 
-                <HeaderMobile linksMenu={linksMenu} MenuLink={MenuLink}/>
+                ``
                 }
                 <div 
-                onClick={() => setDarkTheme(!darkTheme)}
-                className="fadedown-enter-done" 
+                onClick={() => {
+                    setDarkTheme(!darkTheme)
+                    window.localStorage.setItem('darkTheme', String(!darkTheme))
+                }}
+                className="fadedown-enter-done animation" 
                 style={{position: `fixed`,
                 left: `0px`, 
                 transitionDelay: '400ms', 

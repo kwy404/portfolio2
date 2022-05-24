@@ -20,7 +20,7 @@ const HeaderDesktop = ({MenuLink, linksMenu }: props) => {
                 />
             ))}
         </ol>
-        <div className="fadedown-enter-done" 
+        <div className="fadedown-enter-done animation" 
         style={{transitionDelay: '400ms'}}>
             <a className="resume-button" target="_blank" rel="noopener noreferrer">Resume</a>
         </div>

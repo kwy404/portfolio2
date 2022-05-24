@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Assinature from './svg/Assinatura';
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(window.localStorage.getItem('darkTheme') === 'true');
   return (
     <div className={`${darkTheme ? `theme-dark` : `theme-white`} fullBody`}>
         <Header
