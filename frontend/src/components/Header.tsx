@@ -42,12 +42,12 @@ const Header = () => {
             </header>
         </>
     )
-}
+};
 
 interface propsMenuLink {
     linkTitle: string;
     linkPath?: string;
-}
+};
 
 const MenuLink = ({linkTitle, linkPath}: propsMenuLink) => {
     return (
@@ -55,6 +55,6 @@ const MenuLink = ({linkTitle, linkPath}: propsMenuLink) => {
              <a href={`/#${linkPath}`}>{linkTitle}</a>
         </li>
     )
-}
+};
 
 export default Header;
