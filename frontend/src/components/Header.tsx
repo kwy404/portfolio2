@@ -87,7 +87,11 @@ interface propsMenuLink {
 const MenuLink = ({name, path, pathActive, setPathActive}: propsMenuLink) => {
     return (
         <li 
-        onClick={() => setPathActive(path)}
+        onClick={() => {
+            if(setPathActive){
+                setPathActive(path)
+            }
+        }}
         className={`fadedown-enter-done ${path == pathActive ? `onHash` : ``}`} style={{transitionDelay: '0ms'}}>
              <a href={`/#${path}`}>{name}</a>
         </li>
