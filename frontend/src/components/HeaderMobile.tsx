@@ -2,32 +2,25 @@ import {useState} from 'react';
 import {BsPlusLg} from 'react-icons/bs';
 import {FaMinus} from 'react-icons/fa';
 
-interface propsMenuLink {
-    name: string;
-    path?: string;
-    pathActive?: string;
-    setPathActive: (path: string) => void;
-};
+import MenuLink from './MenuLink';
+import LinksMenu from './LinksMenu';
 
 interface props {
-    linksMenu: Array<propsMenuLink>;
-    MenuLink: any;
     pathActive?: string;
     setPathActive: (path: string) => void;
 };
 
 
-const HeaderMobile = ({MenuLink, linksMenu, pathActive, setPathActive }: props) => {
+const HeaderMobile = ({pathActive, setPathActive }: props) => {
     const [isOpen, setIsOpen] = useState(false);
-
     return <>
         <div 
         onClick={() => setIsOpen(!isOpen)}
-        className='buttonToggleBottom'>
+        className='buttonToggle--bottom'>
             { !isOpen ? <BsPlusLg/> : <FaMinus/>}
         </div>
-        { isOpen && <div className='listIcons'>
-            { linksMenu.map((link, index) => (
+        { isOpen && <div className='list__icons'>
+            { LinksMenu.map((link, index) => (
                 <MenuLink 
                 pathActive={pathActive}
                 setPathActive={setPathActive}

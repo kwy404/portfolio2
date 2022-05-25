@@ -1,21 +1,17 @@
-interface propsMenuLink {
-    name: string;
-    path?: string;
-}
+import MenuLink from './MenuLink';
+import LinksMenu from './LinksMenu';
 
 interface props {
-    linksMenu: Array<propsMenuLink>;
-    MenuLink: any;
     pathActive?: string;
     setPathActive: (path: string) => void;
 };
 
-const HeaderDesktop = ({MenuLink, linksMenu, pathActive, setPathActive }: props) => {
+const HeaderDesktop = ({pathActive, setPathActive }: props) => {
     return <nav>
-    <div className="logo fade-enter-done" tabIndex={-1}/>
-    <div className="menuLinkContent">
+    <div className="logo" tabIndex={-1}/>
+    <div className="menu__Link__Content">
         <ol>
-            { linksMenu.map((link, index) => (
+            { LinksMenu.map((link, index) => (
                 <MenuLink 
                 pathActive={pathActive}
                 setPathActive={setPathActive}
@@ -24,9 +20,8 @@ const HeaderDesktop = ({MenuLink, linksMenu, pathActive, setPathActive }: props)
                 />
             ))}
         </ol>
-        <div className="fadedown-enter-done animation" 
-        style={{transitionDelay: '400ms'}}>
-            <a className="resume-button" target="_blank" rel="noopener noreferrer">Resume</a>
+        <div className="animation">
+            <a className="resume__button" target="_blank" rel="noopener noreferrer">Resume</a>
         </div>
     </div>
 </nav>

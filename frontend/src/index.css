@@ -112,13 +112,13 @@ nav{
     z-index: 12;
 }
 
-.menuLinkContent {
+.menu__Link__Content {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
 }
 
-.menuLinkContent ol {
+.menu__Link__Content ol {
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -129,7 +129,7 @@ nav{
     list-style: none;
 }
 
-.menuLinkContent ol li {
+.menu__Link__Content ol li {
     margin: 0px 5px;
     position: relative;
     counter-increment: item 1;
@@ -141,24 +141,24 @@ nav{
     animation-timing-function: counter(item, steps(1)) + 1;
 }
 
-.menuLinkContent ol li:hover{
+.menu__Link__Content ol li:hover{
     filter: hue-rotate(180deg) drop-shadow(0px 0px 20px var(--navy-shadow));
 }
 
-.menuLinkContent ol .onHash{
+.menu__Link__Content ol .list__icons--active{
     filter: hue-rotate(180deg) drop-shadow(0px 0px 20px var(--navy-shadow));
 }
 
-.resume-button:hover{
+.resume__button:hover{
     filter: hue-rotate(180deg) drop-shadow(0px 0px 20px var(--navy-shadow));
     color: var(--white);
 }
 
-.menuLinkContent .resume-button{
+.menu__Link__Content .resume__button{
     animation: all 0.2s ease;
 }
 
-.menuLinkContent .resume-button:hover{
+.menu__Link__Content .resume__button:hover{
     filter: hue-rotate(180deg) drop-shadow(0px 0px 20px var(--navy-shadow));
     background-color: rgba(0,0,0,.1);
     color: var(--white);
@@ -171,11 +171,11 @@ nav{
     animation-timing-function: counter(item, steps(1)) + 1;
 }
 
-.menuLinkContent ol li a {
+.menu__Link__Content ol li a {
     padding: 10px;
 }
 
-.menuLinkContent ol li a::before {
+.menu__Link__Content ol li a::before {
     content: "0" counter(item) ".";
     margin-right: 5px;
     color: var(--green);
@@ -183,7 +183,7 @@ nav{
     text-align: right;
 }
 
-.menuLinkContent .resume-button {
+.menu__Link__Content .resume__button {
     color: var(--green);
     background-color: transparent;
     border: 1px solid var(--green);
@@ -198,7 +198,7 @@ nav{
     font-size: var(--fz-xs);
 }
 
-.menuLinkContent button{
+.menu__Link__Content button{
     position: relative;
     background-color: rgba(0,0,0,.40);
     top: 10px;
@@ -207,7 +207,7 @@ nav{
     padding: 0.75rem 1rem;
 }
 
-.resume-button svg{
+.resume__button svg{
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
@@ -272,7 +272,7 @@ nav{
     margin-top: 20px;
 }
 
-.contentMobile .resume-button{
+.contentMobile .resume__button{
     position: relative;
     top: 20px;
 }
@@ -304,7 +304,7 @@ nav{
     }
 }
 
-.buttonToggleBottom{
+.buttonToggle--bottom{
     position: fixed;
     bottom: 40px;
     right: 40px;
@@ -318,7 +318,7 @@ nav{
     animation: topTop 0.9s ease;
 }
 
-.buttonToggleBottom svg{
+.buttonToggle--bottom svg{
     position: relative;
     display: flex;
     top: 11px;
@@ -326,7 +326,7 @@ nav{
     fill: var(--textColor);
 }
 
-.listIcons{
+.list__icons{
     position: fixed;
     width: fit-content;
     padding-right: 40px;
@@ -341,14 +341,14 @@ nav{
     animation: topTopTwo 0.9s ease;
 }
 
-.listIcons li{
+.list__icons li{
     width: 100%;
     list-style: none;
     padding: 10px;
     cursor: pointer;
 }
 
-.listIcons .onHash{
+.list__icons .list__icons--active{
     filter: hue-rotate(119deg) drop-shadow(2px 4px 6px black) contrast(1.5);
     text-decoration: underline;
     text-decoration-color: var(--green);
@@ -368,4 +368,16 @@ nav{
     100% {
         transform: translateY(0);
     }
+}
+
+.resume__button__modify{
+    position: fixed;
+    left: 0px;
+    transition-delay: 400ms;
+    margin-left: 40px;
+    cursor: pointer;
+    z-index: 13;
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
 }
