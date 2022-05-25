@@ -370,7 +370,7 @@ nav{
     }
 }
 
-.resume__button__modify{
+.resume__button--modify{
     position: fixed;
     left: 0px;
     transition-delay: 400ms;

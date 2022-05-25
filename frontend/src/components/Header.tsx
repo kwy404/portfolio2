@@ -36,7 +36,7 @@ const Header = ({setDarkTheme, darkTheme}: HeaderProps) => {
                     setDarkTheme(!darkTheme)
                     window.localStorage.setItem('darkTheme', String(!darkTheme))
                 }}
-                className="animation resume__button__modify">
+                className="animation resume__button--modify">
                     <a className="resume__button" target="_blank" rel="noopener noreferrer">
                         { darkTheme ? <FaSun/> : <FaMoon/> }
                         Change Theme</a>
