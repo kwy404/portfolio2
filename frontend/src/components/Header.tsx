@@ -21,7 +21,8 @@ const Header = ({setDarkTheme, darkTheme}: HeaderProps) => {
 
     return (
         <>
-            {!isDesktop && <HeaderMobile 
+            {!isDesktop && 
+            <HeaderMobile 
             pathActive={pathActive}
             setPathActive={setPathActive}/>}
             <header>
