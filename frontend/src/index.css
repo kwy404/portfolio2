@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body{
+    font-family: var(--font-sans);
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
 
 :root{
     --dark-navy: #020c1b;
@@ -110,6 +117,7 @@ nav{
     font-family: var(--font-mono);
     counter-reset: item 0;
     z-index: 12;
+    margin: 7vw;
 }
 
 .menu__Link__Content {
